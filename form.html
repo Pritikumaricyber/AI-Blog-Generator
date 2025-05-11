@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Blog Generator</title>
+  <link rel="stylesheet" href="form.css"> <!-- Link to external CSS -->
+</head>
+<body>
+  <h1>AI Blog Generator</h1>
+
+  <input id="blogTitle" type="text" placeholder="Enter Blog Idea/Title" />
+  <button onclick="generateBlog()">Generate</button>
+
+  <textarea id="blogContent" rows="10" placeholder="Generated content will appear here..."></textarea>
+  <button onclick="publishBlog()">Publish</button>
+
+  <script>
+    async function generateBlog() {
+      const title = document.getElementById("blogTitle").value;
+      const response = await fetch('/generateBlog', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ title })
+      });
+      const data = await response.json();
+      document.getElementById("blogContent").value = data.content;
+    }
+
+    async function publishBlog() {
+      const title = document.getElementById("blogTitle").value;
+      const content = document.getElementById("blogContent").value;
+      await fetch('/publishBlog', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ title, content })
+      });
+      alert("Blog Published!");
+    }
+  </script>
+</body>
+</html>

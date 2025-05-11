@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css"> <!-- Linked external CSS -->
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Enter password" required>
+                    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                </div>
+            </div>
+            <button type="submit">Login</button>
+            <p class="error-message" id="errorMessage"></p>
+        </form>
+    </div>
+
+    <script>
+        // Function to toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+        }
+
+        // Form Validation and redirection after successful login
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorMessage = document.getElementById("errorMessage");
+
+            if (username === "" || password === "") {
+                errorMessage.textContent = "Username and Password cannot be empty!";
+                errorMessage.style.color = "yellow";
+            } else if (username !== "admin" || password !== "1234") {
+                errorMessage.textContent = "Invalid username or password!";
+                errorMessage.style.color = "yellow";
+            } else {
+                errorMessage.style.color = "lightgreen";
+                errorMessage.textContent = "Login successful!";
+                setTimeout(() => {
+                    alert("Welcome, " + username + "!");
+                    // Redirect to form.html after successful login
+                    window.location.href = "form.html";
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

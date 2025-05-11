@@ -1,0 +1,56 @@
+/* Apply a modern look to body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: #1a73e8;
+  margin-bottom: 20px;
+}
+
+/* Inputs and textarea */
+input[type="text"], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0f5bd1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  body {
+    margin: 20px;
+    padding: 15px;
+  }
+}
