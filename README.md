@@ -83,17 +83,6 @@ However, due to technical/environment setup issues, backend development couldn�
 
 ---
 
-## 📸 Optional: UI Preview
-
-> ## 📸 UI Preview
-
-### 🔐 Login Page
-![Blog Form](screenshorts.html/login.png)
-
-### 📝 Blog Form Page
-![Blog Form](screenshorts.html/form.png)
-
----
 
 ## 🚀 Future Enhancements
 
