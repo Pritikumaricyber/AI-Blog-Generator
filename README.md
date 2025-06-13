@@ -104,8 +104,3 @@ However, due to technical/environment setup issues, backend development couldn�
 
 ---
 
-## 👨‍💻 Author
-
-Developed by a **B.Tech 2nd Year Student** as a part of a frontend prototype project.
-
----
