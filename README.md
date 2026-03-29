@@ -72,7 +72,6 @@ Create a .env file in the project root and add your OpenAI API key:
 env
 Copy code
 OPENAI_API_KEY=your-openai-api-key-here
-⚠️ The .env file is intentionally excluded from this repo for security reasons.
 
 ### 4. Start the Backend Server
 bash
